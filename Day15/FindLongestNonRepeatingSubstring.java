@@ -6,8 +6,6 @@ public class FindLongestNonRepeatingSubstring{
     
     private static int firstLongestNonRepeat(String str){
         int[] seen = new int[256];
-        class Solution {
-        int[] seen = new int[256];
         int start = 0;
         int max = 0;
 
