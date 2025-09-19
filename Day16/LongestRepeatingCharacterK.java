@@ -7,17 +7,17 @@ class LongestRepeatingCharacterK{
     }
 
     private static int longestRepeatingCharacter(String str, int k){
-        int res =0;
-        HashMap<Character,Integer> hMap = new HashMap<>();
-        for(int i=0; i<str.length(); i++){
-            int max = 0;
-            for(int j=i; j<str.length(); j++){
-                hMap.put(str.charAt(j), hMap.getOrDefault(str.charAt(j),0)+1);
-                max = Math.max(max, hMap.get(str.charAt(j)));
-                if((j-i+1)-max <= k){
-                    res = Math.max(res, j-i+1);
-                }
+        int res = 0, l = 0, max = 0;
+        HashMap<Character,Integer> count = new HashMap<>();
+        for(int r=0; r<s.length(); r++){
+            count.put(s.charAt(r), count.getOrDefault(s.charAt(r),0)+1);
+            max = Math.max(max, count.get(s.charAt(r)));
+
+            while((r-l+1)-max > k){
+                count.put(s.charAt(l), count.get(s.charAt(l))-1);
+                l++;
             }
+            res = Math.max(res, r-l+1);
         }
         return res;
     }
