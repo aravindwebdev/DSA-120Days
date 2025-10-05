@@ -3,7 +3,7 @@ class Solution {
     public int roseGarden(int n, int[] nums, int k, int m) {
      //check if n of days is less than MxK then its notpossible 
      long val = (long)m*k;
-     if(n < val) return -1;
+     if(nums.length < val) return -1;
      int min = Integer.MAX_VALUE;
      int max = Integer.MIN_VALUE;
      for(int i : nums){
