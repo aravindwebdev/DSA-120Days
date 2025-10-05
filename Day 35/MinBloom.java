@@ -15,7 +15,7 @@ class Solution {
       while(low <= high){
         int mid = (low + high) / 2;
 
-        if(checkPossible(nums, mid, m, k)){
+        if(checkPossible(nums, mid, k, m)){
           ans = mid;
           high = mid-1;
         }else{
